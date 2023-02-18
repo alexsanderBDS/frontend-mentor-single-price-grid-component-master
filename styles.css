@@ -1,0 +1,247 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  /* # SPACE SYSTEM */
+  /* ## TYPOGRAPHY - FONT SIZES */
+  --10px: calc(10rem / 16);
+  --12px: calc(12rem / 16);
+  --14px: calc(14rem / 16);
+  --16px: calc(16rem / 16);
+  --18px: calc(18rem / 16);
+  --20px: calc(20rem / 16);
+  --24px: calc(24rem / 16);
+  --36px: calc(36rem / 16);
+  --44px: calc(44rem / 16);
+  --52px: calc(52rem / 16);
+  --62px: calc(62rem / 16);
+  --74px: calc(74rem / 16);
+  --86px: calc(86rem / 16);
+  --98px: calc(98rem / 16);
+
+  /* ## WHITESPACE */
+  --2ws: calc(2rem / 16);
+  --4ws: calc(4rem / 16);
+  --8ws: calc(8rem / 16);
+  --12ws: calc(12rem / 16);
+  --16ws: calc(16rem / 16);
+  --24ws: calc(24rem / 16);
+  --32ws: calc(32rem / 16);
+  --48ws: calc(48rem / 16);
+  --64ws: calc(64rem / 16);
+  --80ws: calc(80rem / 16);
+  --96ws: calc(96rem / 16);
+  --128ws: calc(128rem / 16);
+  /* CUSTOM */
+  --375ws: calc(375rem / 16);
+  --1440ws: calc(1440rem / 16);
+
+  /* # COLORS */
+  /* ## Primary */
+  --color-p-c: hsl(179, 62%, 43%);
+  --color-p-by: hsl(71, 73%, 54%);
+  /* ## Neutral */
+  --color-n-lg: hsl(204, 43%, 93%);
+  --color-n-gb: hsl(218, 22%, 67%);
+
+  /* CUSTOM */
+  --color-c-lg: hsl(179deg 62% 43% / 70%);
+  --color-c-bs: hsl(218deg 39% 66% / 17%);
+  --color-c-bs2: hsl(0deg 0% 0% / 14%);
+  --color-c-bh: hsl(71deg 63% 37%);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: var(--16px);
+  font-weight: 400;
+  line-height: 1;
+  background-color: #000;
+}
+
+.container {
+  max-width: var(--1440ws);
+  min-height: 100vh;
+  background-color: var(--color-n-lg);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: 1fr var(--24ws);
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  width: 50vw;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 6px 20px 10px var(--color-c-bs);
+}
+
+.row {
+  padding: var(--64ws);
+}
+
+.row:first-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--16ws);
+}
+
+.main-heading {
+  color: var(--color-p-c);
+  font-weight: 700;
+  font-size: var(--24px);
+  margin-bottom: var(--16ws);
+}
+
+.main-subheading {
+  color: var(--color-p-by);
+  font-weight: 700;
+  font-size: var(--18px);
+}
+
+.main-text {
+  line-height: 1.5;
+  color: var(--color-n-gb);
+  margin-right: calc(150rem / 16);
+}
+
+.row:nth-child(2) {
+  background-color: var(--color-p-c);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--24ws);
+}
+
+.price-heading {
+  margin-bottom: var(--12ws);
+}
+
+.price-value {
+  font-size: var(--44px);
+  display: flex;
+  align-items: center;
+  gap: var(--16ws);
+}
+
+.price-value span {
+  font-size: var(--18px);
+  opacity: 0.5;
+}
+
+.price-desc {
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.price-btn:link,
+.price-btn:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  padding: var(--16ws);
+  font-size: var(--20px);
+
+  background-color: var(--color-p-by);
+  color: #fff;
+  border-radius: var(--8ws);
+  box-shadow: 0px 0px 8px 1px var(--color-c-bs2);
+
+  transition: background 0.5s, box-shadow 1s;
+}
+
+.price-btn:hover,
+.price-btn:active {
+  background-color: var(--color-c-bh);
+  box-shadow: 0px 0px 12px 5px var(--color-c-bs2);
+}
+
+.row:last-child {
+  background-color: var(--color-c-lg);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--24ws);
+}
+
+.info-text {
+  line-height: 1.5;
+  max-width: calc(208rem / 16);
+  opacity: 0.5;
+}
+
+/* QUERIES */
+
+@media (max-width: calc(1268em /16)) {
+  .card {
+    width: 60vw;
+  }
+}
+@media (max-width: calc(1040em /16)) {
+  .card {
+    width: 80vw;
+  }
+  .row {
+    padding: var(--32ws);
+  }
+}
+
+@media (max-width: calc(730em /16)) {
+  .card {
+    width: 97vw;
+  }
+
+  .row {
+    padding: var(--32ws);
+  }
+}
+@media (max-width: calc(528em /16)) {
+  .card {
+    width: 99vw;
+  }
+
+  .row {
+    padding: var(--12ws);
+  }
+}
+@media (max-width: calc(436em /16)) {
+  .card {
+    grid-template-columns: 1fr;
+    width: 80vw;
+  }
+
+  .row {
+    padding: var(--24ws);
+  }
+
+  .main-text {
+    margin: 0;
+  }
+
+  .price-desc {
+    margin-bottom: var(--12ws);
+  }
+}
